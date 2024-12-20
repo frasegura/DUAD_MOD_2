@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <div style="text-align: center ">
+        <h1>Elecciones nacionales</h1>
+        <h3>Formulario</h3>
+    </div>
+    <div style="text-align: center ">
+        <form action ="/ej_forms/confirmation_window.html">
+            <label for="name" >Nombre completo</label>
+            <br />
+            <select>
+                <option hidden >Seleccione una opcion</option>
+                <option>Candidato #1</option>
+                <option>Candidato #2</option>
+                <option>Candidato #3</option>
+            </select>
+            <br />
+            <label for = "email ">Correo</label>
+            <br />
+            <input type="email" id = "email" name = "email">
+            <br />
+            <label> Num. de Identificación</label>
+            <br />
+            <input type="text" id="identification" name="identification" placeholder = "123456789" pattern="[0-9]{9}">
+            <br />
+            <label for="tel">Teléfono</label>
+            <br />
+            <input type="tel" id="tel_phone_number" placeholder = "12345678" pattern="[0-9]{8}" >
+            <br />
+            <input type="submit" formaction="/ej_forms/confirmation_window.html"   value = "Confirmar"></input>
+        </form>
+    </div>
+</html>
