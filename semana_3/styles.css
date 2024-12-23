@@ -1,0 +1,46 @@
+form {
+  border-color: rgba(0, 0, 255, 0.596);
+  border-style: ridge;
+  border-width: 1em;
+  border-radius: 0.5em;
+  margin: 2em;
+  padding: 1em;
+}
+
+.forms input,
+textarea,
+select {
+  border-color: lightgray;
+  border-style: hidden;
+  background-color: rgba(211, 211, 211, 0.144);
+  margin: 1em;
+  padding: 1em;
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(14, 15, 17, 0.705);
+}
+
+h2::before {
+  background-color: rgba(0, 0, 255, 0.596);
+  width: 1em;
+  height: 0.1em;
+  position: absolute;
+  content: " ";
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color: grey;
+  margin: 0.9em;
+}
+
+.forms input[type="submit"] {
+  background-color: rgba(0, 0, 255, 0.644);
+  color: white;
+  border-radius: 0.4em;
+}
