@@ -1,0 +1,139 @@
+.main-page {
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+/* Main title*/
+h1 {
+  /*background-color: red;
+    border-color: black;
+    border-style: solid;*/
+  border-width: 1em;
+  padding: 0.1em;
+  margin: 0.5em;
+  font-size: 62px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2d2e2e;
+  width: 100%;
+}
+
+/* Second title*/
+h2 {
+  /*background-color: burlywood;
+    border-color: black;
+    border-style: solid;*/
+  border: 0.2em;
+  margin: 1em;
+  color: #403f3e;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #403f3e;
+  width: 100%;
+  line-height: 1.6em;
+}
+
+/* Third title*/
+.third-title {
+  /*background-color: blanchedalmond;
+    border-style: solid;*/
+  border: 0.2em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2d2e2e;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #403f3e;
+}
+
+/* Icons classes*/
+.icons {
+  justify-content: center;
+  display: flex;
+}
+.custom-icon {
+  color: gray;
+  margin: 1em;
+}
+
+.custom-icon:hover {
+  fill: rgb(0, 102, 255);
+  transition: all ease 0.3s;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: auto;
+}
+
+.image-caption {
+  margin: auto;
+  width: 35em;
+  padding: 10px;
+  background-color: rgb(248, 244, 244);
+  text-align: center;
+}
+
+.main-blog {
+  padding: 20px;
+  width: 100%;
+}
+
+.first-paragraph-container p {
+  line-height: 1.6em;
+}
+
+/* Conetainer with the second section of the blog*/
+.sec-paragraph-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-box {
+  background-color: #ffd38e;
+  border-radius: 0.2em;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  margin: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 250px;
+  height: 140px;
+}
+
+.text-box {
+  /* border: solid;*/
+  width: 10em;
+  text-align: center;
+}
+
+.content-box a {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px 50px;
+  padding-top: 0.5em;
+  border: solid #2d2e2e;
+  border-radius: 0.2em;
+  color: white;
+  background-color: #2d2e2e;
+  width: 9em;
+  height: 2em;
+}
