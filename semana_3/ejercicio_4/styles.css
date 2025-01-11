@@ -52,6 +52,6 @@ figcaption a {
   display: inline-block;
   margin-top: 10px;
   font-size: 14px;
-  color: #007bff; /* Color azul */
+  color: #007bff;
   text-decoration: none;
 }
