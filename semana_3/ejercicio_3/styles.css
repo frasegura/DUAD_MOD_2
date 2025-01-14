@@ -1,0 +1,126 @@
+body {
+  background-color: #edebeb;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+#empty-title {
+  background-color: white;
+  height: 10px;
+  width: 80vh;
+}
+
+li {
+  padding: 10px;
+}
+
+#date {
+  font-size: 15px;
+}
+
+.nav {
+  width: auto;
+  text-align: left;
+  font-size: larger;
+  color: #101119;
+  display: inline;
+  margin-left: 2px;
+  font-size: 30px;
+}
+
+.nav li {
+  display: inline;
+  margin-left: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.empty-section {
+  color: #1a48c4;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: auto;
+}
+
+tr {
+  background-color: #1a48c4;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border-bottom: solid #3612121f 1px;
+}
+
+td {
+  background-color: white;
+}
+
+.week {
+  background-color: #101119;
+}
+
+.images,
+.arrow,
+.song-name,
+.plus,
+.award-section,
+.last-week,
+.wks-on-chart {
+  color: #101119;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#first-pos-week,
+#first-pos-peak,
+#first-pos-wks-on-chrt {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.arrow-icon {
+  border: solid;
+  border-radius: 50px;
+  background-color: grey;
+  color: white;
+}
+
+#up-arrow {
+  background-color: green;
+}
+
+#first-song {
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.song-name {
+  font-size: 18px;
+}
+
+.award-section,
+.peak-pos-section {
+  background-color: #edebeb;
+  color: #101119;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.plus {
+  color: grey;
+}

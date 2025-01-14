@@ -1,0 +1,57 @@
+.main-cards-container {
+  background-color: #edebeb;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+  margin: 20px;
+  /*border: solid #edebeb;
+    background-color: white;
+    flex-direction: row;
+    margin: 1em;
+    padding: 12fr;
+    height: auto;
+    overflow: hidden;*/
+}
+
+.image-cont {
+  width: 100%;
+  max-width: 25em;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  padding: 15px;
+  font-size: 14px;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+figcaption h3 {
+  margin: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+figcaption a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
