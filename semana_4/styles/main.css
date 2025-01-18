@@ -5,6 +5,11 @@ body {
   margin: 0;
 }
 
+.main-container {
+  padding: 1rem 5rem;
+  margin: 1rem 5rem;
+}
+
 /*Header CSS*/
 .navbar-container {
   display: flex;
@@ -53,6 +58,7 @@ body {
 /*Main product CSS*/
 .main-tab-prod {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgb(240, 222, 225);
   border-radius: 0.5rem;
   margin-top: 2rem;
@@ -62,26 +68,25 @@ body {
     text-transform: uppercase;
     font-weight: bold;
   }
-
-  .main-image {
-    height: 20rem;
-  }
   .main-image-text {
     /*border: solid forestgreen;*/
     color: #303030;
     display: flex;
+    flex: 1 1 300px;
     flex-direction: column;
     justify-content: center;
     margin: 1rem;
     align-items: start;
   }
   .main-image-container {
-    margin: 2rem;
-    padding: 2rem;
+    margin: 1rem;
+    padding: 1rem;
     /*border: solid;*/
-    max-width: 25rem;
+    max-width: 100%;
+    text-align: center;
     .main-image {
-      width: 15rem;
+      width: 100%;
+      max-width: 20rem;
     }
   }
 
