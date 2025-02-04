@@ -1,15 +1,35 @@
 
 
 function addItem(){
-    const item = document.createElement("li");
-    item.innerHTML = 'Another item';
-    const list = document.getElementById("list");
-    list.appendChild(item);
+    let list = document.getElementById("list");
+    if(!list){
+        list = document.createElement("ul");
+        list.id = "list";
+        container = document.getElementById("container");
+        container.appendChild(list);
+        const item = createFirstItemList();
+        list.appendChild(item);
+
+        
+    }else{
+        const item = document.createElement("li");
+        item.innerHTML = "Another item";
+        list.appendChild(item);
+    }
+
 }
 
 function cleanList(){
-    const list = document.getElementById("list")
-    list.remove();
+    const list = document.getElementById("list");
+    if(list){
+        list.remove();
+    }
+}
+
+function createFirstItemList(){
+    const item = document.createElement("li");
+    item.innerHTML = "An item";
+    return item;
 }
 
 const button_1 = document.getElementById("add-button");
