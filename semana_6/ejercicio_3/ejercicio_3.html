@@ -1,0 +1,24 @@
+<!--Crea un form con inputs de correo, contraseña, nombre y apellidos. También debe tener un radio button para seleccionar si es empleado o no. Al seleccionar “sí”, se debe mostrar un input extra para empleo.
+Si se vuelve a seleccionar “no”, este input se debe esconder.-->
+
+<!DOCTYPE html>
+    <head><link href="styles.css" rel="stylesheet"></head>
+    <body>
+        <forms>
+            <label>Correo</label>
+            <input type="text" placeholder="Correo">
+            <label>Contraseña</label>
+            <input type="password" placeholder="Contraseña">
+            <label>Nombre </label>
+            <input type="text" placeholder="Nombre">
+            <label>Apellidos</label>
+            <input type="text" placeholder="Apellidos">
+            <span id="employee-container">
+                <input type="radio" id="yes-button" name="collection" value="yes">Si
+                <input type="radio" id="no-button" name="collection" value="no">No
+            </span>
+            <input type="text" placeholder="Empleo" id="hidden-input">
+        </forms>
+        <script src="index.js"></script>
+    </body>
+</html>

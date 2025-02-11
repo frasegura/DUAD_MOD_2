@@ -1,0 +1,21 @@
+html {
+  margin: 0;
+}
+
+forms {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+
+  #hidden-input {
+    display: none;
+  }
+  input {
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+  }
+  span {
+    padding: 1rem;
+  }
+}
