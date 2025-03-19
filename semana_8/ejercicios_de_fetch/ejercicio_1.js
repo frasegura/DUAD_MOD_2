@@ -10,9 +10,9 @@ const getApiInfo = async() => {
     console.log("Data retrieved");
 
 
-    const objects = await response.json();
+    const object = await response.json();
 
-    objects.forEach(obj =>{
+    object.forEach(obj =>{
         const data = obj.data;
         
         if(data){
