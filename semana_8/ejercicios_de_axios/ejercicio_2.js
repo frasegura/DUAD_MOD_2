@@ -25,3 +25,5 @@ async function createUser(nombre, correo, contrasena ,direccion){
 
 
 createUser('Francisco','francisco@gmail.com','1234','Coronado');
+
+// id: 'ff808181932badb60195c1497e0b1ee4'
