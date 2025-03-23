@@ -1,0 +1,12 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  padding: 16px;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+}
