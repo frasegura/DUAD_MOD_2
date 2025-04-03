@@ -1,0 +1,35 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  display: block;
+}
+
+.title-container {
+  display: flex;
+  /* border: solid red; */
+  justify-content: center;
+  margin: 20px;
+}
+
+.table-container {
+  /* border: solid; */
+  margin-right: 20px;
+}
+
+.first-card,
+.sec-card,
+.third-card,
+.fourth-card {
+  /* border: 1px solid red; */
+  background-color: rgb(231, 230, 229);
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  text-align: left;
+}
+
+.logout-btn {
+  border-radius: 5px;
+  margin: 20px;
+  width: 10rem;
+  height: 2rem;
+}
