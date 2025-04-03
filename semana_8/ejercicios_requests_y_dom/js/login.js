@@ -45,5 +45,3 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
-
-//id de usuario : ff808181932badb60195f2fa8f4e7cc4
