@@ -37,7 +37,7 @@ document.getElementById("change-password-form").addEventListener("submit", async
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                name: userInfo.name, // ✅ Mantener el nombre
+                name: userInfo.name, 
                 data: {
                     last_name: userInfo.data.last_name,
                     address: userInfo.data.address, 
