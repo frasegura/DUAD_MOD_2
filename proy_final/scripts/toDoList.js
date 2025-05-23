@@ -1,4 +1,4 @@
-var myNodeList = document.getElementById("LI");
+var myNodeList = document.getElementsByTagName("LI");
 var i;
 
 for(i=0; i<=myNodeList.lenght ;i++){
