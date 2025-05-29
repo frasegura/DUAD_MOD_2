@@ -1,54 +1,88 @@
-var myNodeList = document.getElementsByTagName("LI");
-var i;
+// const ul = document.getElementById("myUL");
+// const input = document.getElementById("myInput");
+// const API_URL = "https://api.restful-api.dev/objects";
 
-for(i=0; i<=myNodeList.lenght ;i++){
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
+//Almacenar tareas
+let tasks = [];
+
+const taskInput = document.getElementById('taskInput');
+const addTaskBtn =  document.getElementById('addTaskBtn');
+const taskList = document.getElementById('taskList');
+//const filterButton = document.querySelectorAll('.filter-button');
+
+// EXPLICAR ESTO
+function renderTasks(filter = 'all') {
+    taskList.innerHTML = '';
+
+    const filteredTasks = tasks.filter(task => {
+    if (filter === 'completed') return task.completed;
+    if (filter === 'incomplete') return !task.completed;
+    return true;
+    });
+
+    filteredTasks.forEach((task, index) => {
+        const li = document.createElement('li');
+
+        const taskSpan = document.createElement('span');
+        taskSpan.textContent = task.text;
+        if (task.completed) taskSpan.classList.add('completed');
+        taskSpan.addEventListener('click', () => toggleTask(index));
+
+        const editBtn = document.createElement('button');
+        editBtn.textContent = task.completed ? '↩️': '✅';
+        editBtn.title = task.completed ? 'Mark as incomplete' : 'Mark as complete';
+        editBtn.addEventListener('click', () => toggleTask(index));
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '❌';
+        deleteBtn.addEventListener('click', () => deleteTask(index));
+
+        li.appendChild(taskSpan);
+        li.appendChild(editBtn);
+        li.appendChild(deleteBtn);
+
+        taskList.appendChild(li);
+    });
 }
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+
+//CREATE
+
+function addTask(){
+    const text = taskInput.value.trim();
+    if(text==="")return;
+    tasks.push({ text, completed: false });
+    taskInput.value = '';
+    renderTasks();
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+//UPDATE --> actualizar estado
+function toggleTask(index){
+    tasks[index].completed = !tasks[index].completed;
+    renderTasks();
 }
+
+// function editTask(index){
+//     tasks[index].completed = true;
+//     renderTasks();
+// }
+
+//DELETE
+function deleteTask(index){
+    tasks.splice(index,1);
+    renderTasks();
+}
+
+//Funcion para aplicar filtros
+
+function applyFilters(f){
+    const filter = f.target.getAttribute('data-filter');
+    renderTasks(filter);
+}
+
+addTaskBtn.addEventListener('click', addTask);
+filterButton.forEach(button => {
+    button.addEventListener('click', applyFilters);
+});
+
+renderTasks();

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head><link  href="../styles/styles.css" rel="stylesheet"/></head>
-    <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span>
-    </div>
+    <body>
+        <div class="container">
+            <h1>To do List</h1>
+            <input type="text" placeholder="New task" id="taskInput">
+            <button class="listButtons" id="addTaskBtn">Add task</button>
 
-    <ul id="myUL">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-    </ul>
-    <script src="../scripts/toDoList.js" ></script>
+            <div class="filters">
+                <button data-filter="all" class="filter-button">All</button>
+                <button data-filter="completed" class="filter-button">Completed</button>
+                <button data-filter="incomplete" class="filter-button">Incomplete</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+        <script src="../scripts/toDoList.js" ></script>
+    </body>
 </html>
 
 
