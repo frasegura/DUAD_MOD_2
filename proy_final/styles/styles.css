@@ -1,52 +1,65 @@
 html {
-  background-color: black;
+  background-color: #121212;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgba(103, 103, 104, 0.925);
+  color: rgba(241, 233, 233, 0.925);
+  display: flex;
+  justify-content: center; /*horizontal*/
+  align-items: center; /*vertical*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .forms-cotainer {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
   height: 100vh;
-  background-color: #f0f0f0; /* (opcional) color del fondo general */
+  /* background-color: #121212; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
 }
 
 .forms-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 400px;
   padding: 30px;
-  border: 2px solid rgb(167, 166, 172);
+  border: 2px solid rgb(82, 55, 214);
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: #121212;
 }
 
+/* Estilo para los inputs */
 .inputs_fields {
-  height: 25px;
+  height: 30px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 5px;
   margin-top: 5px;
-  margin-bottom: 10px;
-  border-style: solid;
-  border-color: #afadad;
+  margin-bottom: 15px;
+  border: 1px solid #afadad;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
+/* Estilo para los labels */
 .labels {
-  margin: 10px 1px;
-  color: black;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0 5px 0;
+  color: rgb(252, 245, 245);
+  text-align: left;
 }
 
 #title_label {
   margin-left: 150px;
-  font-style: oblique;
-  font-size: larger;
 }
 
 button {
   color: #eedddd;
   margin: 20px;
   height: 2.5rem;
-  background-color: rgb(88, 125, 248);
+  background-color: rgb(82, 55, 214);
   border-radius: 5px;
   border-style: none;
 }
@@ -54,15 +67,26 @@ button {
 /*To do list */
 
 .container {
-  background: #fff;
+  background: #121212;
   padding: 20px;
   border-radius: 5px;
   width: 400px;
+  border: 2px solid rgb(82, 55, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#main-title-todo-list {
+  font-weight: lighter;
 }
 
 #taskInput {
   border-radius: 4px;
   height: 1.5rem;
+  border: 2px solid rgb(82, 55, 214);
 }
 
 .listButtons {
@@ -77,11 +101,10 @@ button {
 
 .filters button {
   margin-right: 5px;
-  height: fit-content;
   width: 100px;
 }
 
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: rgb(226, 223, 223);
 }

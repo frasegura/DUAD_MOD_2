@@ -8,9 +8,8 @@ let tasks = [];
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn =  document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
-//const filterButton = document.querySelectorAll('.filter-button');
+const filterButton = document.querySelectorAll('.filter-button');
 
-// EXPLICAR ESTO
 function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
 
