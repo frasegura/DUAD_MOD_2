@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head><link  href="../styles/styles.css" rel="stylesheet"/></head>
+    <head>
+        <link  href="../styles/styles.css" rel="stylesheet"/>
+        <link href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css" rel="stylesheet">
+        <link href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css" rel="stylesheet">
+
+    </head>
     <body>
-        <form class="forms-cotainer" id="registro-form">
-            <div class="forms-box">
-                <label class="labels" id="title_label">Registration form</label>
-                <label class="labels" id="title_label" >Name</label>
-                <input type="text" placeholder="Name" class ="inputs_fields" id="name">
-                <label class="labels" id="title_label">Last name</label>
-                <input type="text" placeholder="Last name" class ="inputs_fields"  id="last_name">
-                <label class="labels" id="title_label">Email Address</label>
-                <input type="text" placeholder="Email" class ="inputs_fields"  id="email">
-                <label class="labels" id="title_label">Password</label>
-                <input type="password" placeholder="Password" class ="inputs_fields"  id="password">
-                <label class="labels" id="title_label">Phone number </label>
-                <input type="text" placeholder="Phone number" class ="inputs_fields"  id="phone_number" >
-                <label class="labels" id="title_label">Birth date</label>
-                <input type="date" class ="inputs_fields"  id="date">
-                <button type="submit" class="register-button">Register</button>
-            </div>
-        </form>
+
+        <nav class="navbar"> 
+            <ul>
+                <li><a href="login.html"><i class="fi fi-bs-user"></i><span>Log in</span></a></li>
+                <li><a href="about.html"><i class="fi fi-ss-info"></i><span>About</span></a></li>
+            </ul>
+        </nav>        
+        <forms class="forms-box">
+            <label class="labels" id="title_label">Registration form</label>
+            <label class="labels" id="title_label" >Name</label>
+            <input type="text" placeholder="Name" class ="inputs_fields" id="name">
+            <label class="labels" id="title_label">Last name</label>
+            <input type="text" placeholder="Last name" class ="inputs_fields"  id="last_name">
+            <label class="labels" id="title_label">Email Address</label>
+            <input type="text" placeholder="Email" class ="inputs_fields"  id="email">
+            <label class="labels" id="title_label">Password</label>
+            <input type="password" placeholder="Password" class ="inputs_fields"  id="password">
+            <label class="labels" id="title_label">Phone number </label>
+            <input type="text" placeholder="Phone number" class ="inputs_fields"  id="phone_number" >
+            <label class="labels" id="title_label">Birth date</label>
+            <input type="date" class ="inputs_fields"  id="date">
+            <button type="submit" class="register-button">Register</button>
+        </forms>
+    
         <script src="../scripts/register.js"></script>
     </body>
 </html> 

@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head><link  href="../styles/styles.css" rel="stylesheet"/></head>
+    <head>
+        <link href="../styles/styles.css" rel="stylesheet"/>
+        <link href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css" rel="stylesheet">
+        <link href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+
+
+    </head>
     <body>
-        <form class="forms-cotainer" id="log-in-forms">
-            <div class="forms-box">
-                <label class="labels" id="title_label">Welcome</label>
-                <label class="labels">User ID</label>
-                <input type="text" id="user_id" placeholder="User ID" class ="inputs_fields">
-                <label class="labels">Password</label>
-                <input type="password" id="pass_id" placeholder="Password" class ="inputs_fields">
-                <button>Login</button>
-            </div>
-        </form>
+        <nav class="navbar"> 
+            <ul>
+                <li><a href="register.html"><i class="fi fi-rs-registration-paper"></i><span>Register</span></a></li>
+                <li><a href="about.html"><i class="fi fi-ss-info"></i><span>About</span></a></li>
+            </ul>
+        </nav>
+        <forms class="forms-box">
+            <label class="labels" id="title_label">Welcome</label>
+            <label class="labels">User ID</label>
+            <input type="text" id="user_id" placeholder="User ID" class ="inputs_fields">
+            <label class="labels">Password</label>
+            <input type="password" id="pass_id" placeholder="Password" class ="inputs_fields">
+            <button>Login</button>
+        </forms>
         <script src="../scripts/logins.js"></script>
     </body>
 </html>
