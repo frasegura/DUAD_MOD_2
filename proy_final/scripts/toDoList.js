@@ -1,14 +1,23 @@
-// const ul = document.getElementById("myUL");
-// const input = document.getElementById("myInput");
-// const API_URL = "https://api.restful-api.dev/objects";
 
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+const nombreUsuario = usuario.name || (usuario.data && usuario.data.name);
+const userId = usuario.id || usuario.email || usuario.name;
+const nombreElemento = document.getElementById("user-name");
 //Almacenar tareas
-let tasks = [];
-
+let tasks = JSON.parse(localStorage.getItem(`tasks_${userId}`)) || [];
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn =  document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 const filterButton = document.querySelectorAll('.filter-button');
+
+if (!usuario) {
+    window.location.href = 'login.html';
+}
+
+if (nombreElemento && nombreUsuario) {
+    nombreElemento.textContent = `Welcome  ${nombreUsuario}`;
+}
+
 
 function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
@@ -44,20 +53,20 @@ function renderTasks(filter = 'all') {
     });
 }
 
-
 //CREATE
-
 function addTask(){
     const text = taskInput.value.trim();
     if(text==="")return;
     tasks.push({ text, completed: false });
     taskInput.value = '';
+    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
     renderTasks();
 }
 
 //UPDATE --> actualizar estado
 function toggleTask(index){
     tasks[index].completed = !tasks[index].completed;
+    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
     renderTasks();
 }
 
@@ -69,6 +78,7 @@ function toggleTask(index){
 //DELETE
 function deleteTask(index){
     tasks.splice(index,1);
+    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
     renderTasks();
 }
 
@@ -76,7 +86,20 @@ function deleteTask(index){
 
 function applyFilters(f){
     const filter = f.target.getAttribute('data-filter');
+
+    filterButton.forEach(button =>{
+        button.classList.remove('active');
+    });
+
+    f.target.classList.add('active');
     renderTasks(filter);
+}
+
+//Funcion cerrar sesion:
+function cerrarSesion() {
+    localStorage.removeItem("usuario");
+    sessionStorage.clear();
+    window.location.href = 'login.html';
 }
 
 addTaskBtn.addEventListener('click', addTask);

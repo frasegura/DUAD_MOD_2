@@ -164,3 +164,10 @@ button {
   padding-left: 20px;
   list-style-type: none;
 }
+
+.filter-button.active {
+  background-color: rgb(145, 125, 248);
+  color: white;
+  font-weight: bold;
+  border: 1px solid #a643d4;
+}
