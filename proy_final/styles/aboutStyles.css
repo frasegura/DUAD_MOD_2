@@ -1,14 +1,10 @@
-html {
-  background-color: #121212;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgba(241, 233, 233, 0.925);
-  display: flex;
-  justify-content: center; /*horizontal*/
-  align-items: center; /*vertical*/
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+html,
 body {
+  background-color: #121212;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(241, 233, 233, 0.925);
   margin: 0;
+  padding: 0;
 }
 
 /* nav-bar*/
@@ -56,15 +52,22 @@ body {
 
 /*-Estilos generales-*/
 
+.main-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .sec-section {
-  margin-top: 20px;
-  padding-top: 10%;
+  /* margin-top: 5px; */
+  padding-top: 25px;
   background-color: #333;
   border: solid rgb(82, 55, 214);
   border-radius: 10%;
   text-align: center;
   color: white;
-
+  width: 25rem;
   #personal-photo {
     display: block;
     width: 15rem;
@@ -101,6 +104,10 @@ body {
 }
 
 .personal-info-cont {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ul {
     list-style: none;
     i {
@@ -109,13 +116,21 @@ body {
   }
 }
 
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .credits-section {
   background-color: #333232;
-  margin: 30px;
+  /* margin: 30px; */
   padding-bottom: 50px;
   border: solid rgb(82, 55, 214);
   border-radius: 10%;
   text-align: center;
+  width: 25rem;
   #lyft-photo {
     display: block;
     width: 15rem;

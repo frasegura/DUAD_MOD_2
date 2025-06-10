@@ -23,35 +23,48 @@ function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
 
     const filteredTasks = tasks.filter(task => {
-    if (filter === 'completed') return task.completed;
-    if (filter === 'incomplete') return !task.completed;
-    return true;
+        if (filter === 'completed') return task.completed;
+        if (filter === 'incomplete') return !task.completed;
+        return true;
     });
 
     filteredTasks.forEach((task, index) => {
-        const li = document.createElement('li');
+        const row = document.createElement('tr');
 
+        // Columna: Tarea
+        const taskCell = document.createElement('td');
         const taskSpan = document.createElement('span');
         taskSpan.textContent = task.text;
         if (task.completed) taskSpan.classList.add('completed');
         taskSpan.addEventListener('click', () => toggleTask(index));
+        taskCell.appendChild(taskSpan);
 
+        // Columna: Estado
+        const statusCell = document.createElement('td');
         const editBtn = document.createElement('button');
-        editBtn.textContent = task.completed ? '↩️': '✅';
+        editBtn.textContent = task.completed ? '↩️' : '✅';
         editBtn.title = task.completed ? 'Mark as incomplete' : 'Mark as complete';
         editBtn.addEventListener('click', () => toggleTask(index));
+        statusCell.appendChild(editBtn);
 
+        // Columna: Acciones
+        const actionCell = document.createElement('td');
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = '❌';
+        deleteBtn.title = 'Delete task';
         deleteBtn.addEventListener('click', () => deleteTask(index));
+        actionCell.appendChild(deleteBtn);
 
-        li.appendChild(taskSpan);
-        li.appendChild(editBtn);
-        li.appendChild(deleteBtn);
+        // Agrega las celdas a la fila
+        row.appendChild(taskCell);
+        row.appendChild(statusCell);
+        row.appendChild(actionCell);
 
-        taskList.appendChild(li);
+        // Agrega la fila a la tabla
+        taskList.appendChild(row);
     });
 }
+
 
 //CREATE
 function addTask(){
