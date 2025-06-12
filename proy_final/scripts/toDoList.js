@@ -19,7 +19,7 @@ if(!usuario){
 }
 
 if (!taskId) {
-    alert("No se encontró tu lista de tareas. Por favor inicia sesión nuevamente.");
+    alert("Your task list was not found. Please login again.");
     localStorage.removeItem("usuario");
     window.location.href = "login.html";
 }

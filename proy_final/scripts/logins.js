@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const URL = `https://api.restful-api.dev/objects/${user_id}`;
 
         if(!user_id || !password){
-            alert("Porfavor ingrese su ID o su contrasena");
+            alert("Please enter you ID or your password");
             return;
         }
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 throw new Error("User not found");
             }
             const data = await response.json();
-            console.log("Datos obtenidos de la API:", data);
+            // console.log("Datos obtenidos de la API:", data);
 
             if(data.data && data.data.password){
                 if(data.data.password === password){

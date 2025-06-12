@@ -23,8 +23,6 @@ document.getElementById("registro-form").addEventListener("submit" , async funct
     //     }
     // });
 
-
-
         const response = await fetch(URL,{
             method: 'POST',
             headers :  { "Content-Type": "application/json" },
