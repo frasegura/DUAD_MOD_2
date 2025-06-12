@@ -1,23 +1,61 @@
 
 const usuario = JSON.parse(localStorage.getItem("usuario"));
 const nombreUsuario = usuario.name || (usuario.data && usuario.data.name);
-const userId = usuario.id || usuario.email || usuario.name;
+const taskId = usuario.data?.taskId;
 const nombreElemento = document.getElementById("user-name");
 //Almacenar tareas
-let tasks = JSON.parse(localStorage.getItem(`tasks_${userId}`)) || [];
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn =  document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 const filterButton = document.querySelectorAll('.filter-button');
+const URL = "https://api.restful-api.dev/objects";
 
-if (!usuario) {
+let tasks=[];
+
+//Validaciones:
+
+if(!usuario){
     window.location.href = 'login.html';
+}
+
+if (!taskId) {
+    alert("No se encontró tu lista de tareas. Por favor inicia sesión nuevamente.");
+    localStorage.removeItem("usuario");
+    window.location.href = "login.html";
 }
 
 if (nombreElemento && nombreUsuario) {
     nombreElemento.textContent = `Welcome  ${nombreUsuario}`;
 }
 
+//CARGAR DESDE EL API
+async function loadTasks() {
+    try{
+        const response = await fetch(`${URL}/${taskId}`);
+        if(!response.ok) throw new Error("Error loading your tasks list");
+        const data = await response.json();
+        tasks = data.data.tasks || [];
+        renderTasks();
+    } catch(error){
+        console.log("Error loading tasks...", error)
+    }
+}
+
+// Guardar tareas en la API
+async function saveTasks() {
+    try {
+        await fetch(`${URL}/${taskId}`, {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: `tasks_${nombreUsuario}`,
+                data: { tasks }
+            })
+        });
+    } catch (error) {
+        console.error("Error al guardar tareas:", error);
+    }
+}
 
 function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
@@ -65,33 +103,28 @@ function renderTasks(filter = 'all') {
     });
 }
 
-
 //CREATE
-function addTask(){
+async function addTask(){
     const text = taskInput.value.trim();
     if(text==="")return;
     tasks.push({ text, completed: false });
+
     taskInput.value = '';
-    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
+    await saveTasks();
     renderTasks();
 }
 
 //UPDATE --> actualizar estado
-function toggleTask(index){
+async function toggleTask(index){
     tasks[index].completed = !tasks[index].completed;
-    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
+    await saveTasks();
     renderTasks();
 }
 
-// function editTask(index){
-//     tasks[index].completed = true;
-//     renderTasks();
-// }
-
 //DELETE
-function deleteTask(index){
+async function deleteTask(index){
     tasks.splice(index,1);
-    localStorage.setItem(`tasks_${userId}`, JSON.stringify(tasks));
+    await saveTasks();
     renderTasks();
 }
 
@@ -120,4 +153,5 @@ filterButton.forEach(button => {
     button.addEventListener('click', applyFilters);
 });
 
-renderTasks();
+loadTasks();
+

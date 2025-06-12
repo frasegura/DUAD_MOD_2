@@ -43,10 +43,48 @@ document.getElementById("registro-form").addEventListener("submit" , async funct
             throw new Error(`Error al registrar usuario: ${errorText}`);
         }
 
-        const data = await response.json();
+        const userData = await response.json();
 
-        alert(`El usuario ${data.name} fue agregado correctamente, su ID es: ${data.id}`);
-        localStorage.setItem("usuario", JSON.stringify(data));
+        const taskResponse = await fetch(URL,{
+            method: 'POST',
+            headers:{"Content-Type" : "application/json" },
+            body: JSON.stringify({
+                name:`tasks_${name}`,
+                data:{
+                    tasks:[]
+                }
+            })
+        });
+        if(!taskResponse.ok){
+            const errorText = await taskResponse.text();
+            throw new Error( `${errorText}`);
+        }
+
+        const taskData = await taskResponse.json();
+        const taskId = taskData.id;
+
+        const updateUser = await fetch(`${URL}/${userData.id}`, {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name,
+                data: {
+                    ...userData.data,
+                    taskId: taskId 
+                }
+            })
+        });
+
+        if (!updateUser.ok) {
+            const errorText = await updateUser.text();
+            throw new Error(`Error al asociar tareas al usuario: ${errorText}`);
+        }
+
+        const updatedUser = await updateUser.json();
+        console.log("updatedUser:", updatedUser); 
+        localStorage.setItem("usuario", JSON.stringify(updatedUser));
+
+        alert(`El usuario ${updatedUser.name} fue agregado correctamente, su ID es: ${updatedUser.id}`);
         window.location.href = "../src/login.html";
 
     }catch(error){

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 alert("Password not found");
             }
 
-        }catch{
+        }catch(error){
             console.error("Login failed :", error);
             alert("User not found or incorrect data");
         }
@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-//ff80818196f2a23f019739ca98ca0d48 user id
 
-//ff80818196f2a23f019739cde7cb0d54
+
+
+//ff80818196f2a23f019762f91ff77442    pwd: 123
+//ff80818196f2a23f019763003ec87456    pwd: 123
