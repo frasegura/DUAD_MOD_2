@@ -53,7 +53,7 @@ body {
 /*-Estilos generales-*/
 
 .main-section {
-  height: 100vh;
+  padding-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +104,7 @@ body {
 }
 
 .personal-info-cont {
-  height: 100vh;
+  padding-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +120,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 60px;
 }
 
 .credits-section {

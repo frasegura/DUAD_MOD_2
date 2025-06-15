@@ -60,11 +60,34 @@ async function saveTasks() {
 function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
 
+    //1)Tareas vacias sin filtro:
+    const emptyRow = document.createElement('tr');
+    const emptyCell = document.createElement('td');
+    if (tasks.length === 0) {
+        emptyCell.textContent = "No tasks added";
+        emptyCell.colSpan = 3;
+        emptyCell.style.textAlign = "center";
+        emptyRow.appendChild(emptyCell);
+        taskList.appendChild(emptyRow);
+        return;
+    }
+    //----
+
     const filteredTasks = tasks.filter(task => {
         if (filter === 'completed') return task.completed;
         if (filter === 'incomplete') return !task.completed;
         return true;
     });
+
+    //2)Tareas vacias con filtros:
+    if(filteredTasks.length ===0){
+        emptyCell.textContent = "No filtered tasks";
+        emptyCell.colSpan = 3;
+        emptyCell.style.textAlign = "center";
+        emptyRow.appendChild(emptyCell);
+        taskList.appendChild(emptyRow);
+        return;
+    }
 
     filteredTasks.forEach((task, index) => {
         const row = document.createElement('tr');
@@ -154,4 +177,3 @@ filterButton.forEach(button => {
 });
 
 loadTasks();
-
