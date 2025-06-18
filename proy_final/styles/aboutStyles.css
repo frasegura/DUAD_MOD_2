@@ -223,8 +223,9 @@ footer {
     font-size: 15px;
   }
   a {
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 10px;
+    text-decoration: none;
   }
   a:hover {
     color: rgb(82, 55, 214);
