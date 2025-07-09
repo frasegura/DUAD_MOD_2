@@ -1,4 +1,6 @@
 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const usuario = localStorage.getItem("usuario");
     if (usuario) {
